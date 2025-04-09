@@ -54,8 +54,11 @@ jobs:
       - name: Install latest nightly
         uses: actions-rs/toolchain@v1
         with:
-          toolchain: nightly
+          toolchain: nightly-2023-05-25
           override: true
           components: rustfmt, clippy
+      - name: Update dependencies
+        working-directory: packages/contract
+        run: cargo update -p cargo-platform@0.1.9 --precise 0.1.7
       - name: integration_test
         run: yarn workspace contract test
