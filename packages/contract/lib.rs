@@ -1,6 +1,6 @@
 #![cfg_attr(not(feature = "std"), no_std)]
 
-mod FT;
+mod ft;
 mod follow;
 mod message;
 mod metadata;
